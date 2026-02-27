@@ -1,0 +1,30 @@
+using System;
+
+class Aluno_Cidade
+{
+    static void Main()
+    {
+        // Solicita o nome do aluno
+        Console.WriteLine("Digite o nome do aluno: ");
+        string nomeDoAluno = Console.ReadLine();
+
+        // Solicita a cidade
+        Console.WriteLine("Digite a cidade do aluno: ");
+        string cidade = Console.ReadLine();
+
+        // Solicita um número
+        Console.WriteLine("Digite um número: ");
+        double numero = Convert.ToDouble(Console.ReadLine());
+
+        // Calcula o dobro
+        double dobro = numero * 2;
+
+        // Exibe as informações
+        Console.WriteLine();
+        Console.WriteLine("Informações do Aluno:");
+        Console.WriteLine("Nome: " + nomeDoAluno);
+        Console.WriteLine("Cidade: " + cidade);
+        Console.WriteLine("Número digitado: " + numero);
+        Console.WriteLine("Dobro do número: " + dobro);
+    }
+}

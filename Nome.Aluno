@@ -1,0 +1,14 @@
+using System;
+
+class Aluno_Nome
+{
+    static void Main()
+    {
+        // Solicita o nome do aluno
+        Console.Write("Digite o nome do aluno: ");
+        string nomeDoAluno = Console.ReadLine();
+
+        // Mostra o nome do aluno
+        Console.WriteLine("O nome do aluno é: " + nomeDoAluno);
+    }
+}

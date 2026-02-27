@@ -1,0 +1,69 @@
+using System;
+
+class Resultado_TOTAL
+{
+    static void Main()
+    {
+     
+        // 1. Entrada de dados dos produtos
+        string[] nomesProdutos = new string[3];
+        int[] quantidades = new int[3];
+        double[] precos = new double[3];
+        double[] totaisPorProduto = new double[3];
+
+        for (int i = 0; i < 3; i++)
+        {
+            Console.WriteLine($"Digite o nome do produto {i + 1}: ");
+            nomesProdutos[i] = Console.ReadLine();
+
+            Console.WriteLine($"Digite a quantidade vendida de {nomesProdutos[i]}: ");
+            quantidades[i] = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Digite o preço unitário de {nomesProdutos[i]} (R$): ");
+            precos[i] = double.Parse(Console.ReadLine());
+
+            // Calcula o total vendido por produto
+            totaisPorProduto[i] = quantidades[i] * precos[i];
+        }
+
+        // 2. Calcula o total geral de vendas
+        double totalGeral = totaisPorProduto[0] + totaisPorProduto[1] + totaisPorProduto[2];
+
+        // 3. Informações sobre combustível
+        const double distancia = 320.0; // km até Uberlândia
+
+        Console.WriteLine("\nDigite o consumo do veículo (km/l): ");
+        double consumo = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Digite o preço do combustível (R$ por litro): ");
+        double precoCombustivel = double.Parse(Console.ReadLine());
+
+        // Cálculo do gasto com combustível
+        double litrosNecessarios = distancia / consumo;
+        double custoCombustivel = litrosNecessarios * precoCombustivel;
+
+        // 4. Saída final - Resumo
+        Console.WriteLine("\n= RESUMO FINAL =");
+
+        Console.WriteLine("\n--- VENDAS DETALHADAS ---");
+        for (int i = 0; i < 3; i++)
+        {
+            Console.WriteLine($"Produto: {nomesProdutos[i]}");
+            Console.WriteLine($"Quantidade vendida: {quantidades[i]}");
+            Console.WriteLine($"Preço unitário: R$ {precos[i]:F2}");
+            Console.WriteLine($"Total: R$ {totaisPorProduto[i]:F2}");
+            Console.WriteLine();
+        }
+
+        Console.WriteLine($"TOTAL GERAL VENDIDO: R$ {totalGeral:F2}");
+
+        Console.WriteLine("\n--- INFORMAÇÕES DO COMBUSTÍVEL ---");
+        Console.WriteLine($"Distância até Uberlândia: {distancia} km");
+        Console.WriteLine($"Consumo do veículo: {consumo} km/l");
+        Console.WriteLine($"Preço do combustível: R$ {precoCombustivel:F2}");
+        Console.WriteLine($"Litros necessários: {litrosNecessarios:F2} L");
+        Console.WriteLine($"Gasto total com combustível: R$ {custoCombustivel:F2}");
+
+        Console.WriteLine("\n= FIM DO RELATÓRIO =");
+    }
+}
